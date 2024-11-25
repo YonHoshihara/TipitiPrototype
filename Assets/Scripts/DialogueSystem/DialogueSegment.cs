@@ -57,7 +57,6 @@ public class DialogueSegment : Node
 
     public DialogueSegment GetNextDialogue(int option)
     {
-        Debug.Log(option);
         if(HasNextDialogue())
             if (HasChoices)
             {

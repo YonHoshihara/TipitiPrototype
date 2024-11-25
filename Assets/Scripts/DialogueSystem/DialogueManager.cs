@@ -57,6 +57,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueSO dialogue)
     {
+        _dialoguePanel.gameObject.SetActive(true);
         StartCoroutine(DisplaySegment(dialogue.getStartSegment()));
     }
 
@@ -144,6 +145,6 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        //
+        _dialoguePanel.gameObject.SetActive(false);
     }
 }
