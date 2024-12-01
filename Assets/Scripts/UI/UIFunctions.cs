@@ -19,4 +19,9 @@ public class UIFunctions : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void LoadLevel(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }

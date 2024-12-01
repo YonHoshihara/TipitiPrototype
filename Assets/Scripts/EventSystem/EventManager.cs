@@ -10,6 +10,15 @@ public static class EventManager
 
     public delegate void OnGameOver();
     public static event OnGameOver OnGameOverEvent;
+
+    public delegate void OnChangeCookingGameMecanic();
+    public static event OnChangeCookingGameMecanic OnChangeCookingGameMecanicEvent;
+
+    public delegate void OnLaddleWasClicked();
+    public static event OnLaddleWasClicked OnLaddleWasClickedEvent;
+
+    public delegate void OnPotWasStirred();
+    public static event OnPotWasStirred OnPotWasStirredEvent;
     #endregion
 
 
@@ -22,6 +31,21 @@ public static class EventManager
     public static void OnGameOverTrigger()
     {
         OnGameOverEvent?.Invoke();
+    }
+
+    public static void OnChangeCookingGameMecanicTrigger()
+    {
+        OnChangeCookingGameMecanicEvent?.Invoke();
+    }
+
+    public static void OnLaddleWasClickedTrigger()
+    {
+        OnLaddleWasClickedEvent?.Invoke();
+    }
+
+    public static void OnPotWasStirredTrigger()
+    {
+        OnPotWasStirredEvent?.Invoke();
     }
     #endregion
 }
