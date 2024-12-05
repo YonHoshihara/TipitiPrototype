@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: Teste
   ingredientsList:
-  - {fileID: 6592061736573452561, guid: 8f2710a24ce4110409a6aec933ee2042, type: 3}
-  - {fileID: 4924073162042995964, guid: a30183dfe11218945aaa014b764fb4b6, type: 3}
-  - {fileID: 9129622754363499733, guid: 05491ded94f3c7744a016254c721945f, type: 3}
   - {fileID: 2007545508585048210, guid: c5bbecabce58c154f8dfc9bbc8e0d5b1, type: 3}
-  - {fileID: 8592159526935219844, guid: 95236ffa4dacd6e428910d8bd561865c, type: 3}
+  - {fileID: 9129622754363499733, guid: 05491ded94f3c7744a016254c721945f, type: 3}
+  - {fileID: 7371460870457711849, guid: 4e4117bb7318e5642978d7d9f1aafb6f, type: 3}
+  - {fileID: 6592061736573452561, guid: 8f2710a24ce4110409a6aec933ee2042, type: 3}
+  - {fileID: 8718580544406211020, guid: fd9a5b50c2fac124688e9b8d1931bd21, type: 3}

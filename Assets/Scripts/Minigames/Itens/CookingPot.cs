@@ -28,9 +28,9 @@ public class CookingPot : PlateDropSlot
         EventManager.OnChangeCookingGameMecanicTrigger();
     }
 
-    protected override void CheckIngredients()
+    protected override void CheckIngredientsAmmount()
     {
-        if (_droppedObjects.Count == _recipeSO.ingredientsList.Count)
+        if (_droppedIngredients.Count == _recipeSO.ingredientsList.Count)
         {
             _allIngredientsAdded = true;
         }
