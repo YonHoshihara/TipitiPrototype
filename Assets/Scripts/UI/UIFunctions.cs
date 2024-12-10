@@ -24,4 +24,21 @@ public class UIFunctions : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void ShowPopUp(GameObject go)
+    {
+        go.SetActive(true);
+    }
+
+    public void HidePopUp(GameObject go)
+    {
+        go.SetActive(false);
+    }
+
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+
 }
