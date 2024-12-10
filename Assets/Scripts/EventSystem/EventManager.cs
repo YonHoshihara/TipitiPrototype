@@ -19,6 +19,12 @@ public static class EventManager
 
     public delegate void OnPotWasStirred();
     public static event OnPotWasStirred OnPotWasStirredEvent;
+
+    public delegate void OnChangeStepIconToPot();
+    public static event OnChangeStepIconToPot OnChangeStepIconToPotEvent;
+
+    public delegate void OnChangeStepIconToIngredient();
+    public static event OnChangeStepIconToIngredient OnChangeStepIconToIngredientEvent;
     #endregion
 
 
@@ -46,6 +52,16 @@ public static class EventManager
     public static void OnPotWasStirredTrigger()
     {
         OnPotWasStirredEvent?.Invoke();
+    }
+
+    public static void OnChangeStepIconToPotTrigger()
+    {
+        OnChangeStepIconToPotEvent?.Invoke();
+    }
+
+    public static void OnChangeStepIconToIngredientTrigger()
+    {
+        OnChangeStepIconToPotEvent?.Invoke();
     }
     #endregion
 }
