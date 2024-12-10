@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class IngredientMinigameController : MinigameController
 {
     [Header("Separation Minigame References")]
+    [SerializeField] protected AllIngredientsList _allIngredientsSO;
     [SerializeField] private Image _listClock;
     [SerializeField] private GameObject _listContentGameobject;
     [SerializeField] private GameObject _listPanel;
@@ -44,6 +46,48 @@ public class IngredientMinigameController : MinigameController
                 TimerCountdown(_listClock, _listTimerValue);
             }
         }
+    }
+
+    protected override void GenerateIngredientsInPlates()
+    {
+        List<GameObject> tempList = _allIngredientsSO._ingredientPFB.Except(_selectedRecipeSO.ingredientsList).ToList();
+        List<GameObject> plateIngredients = new List<GameObject>();
+        plateIngredients.AddRange(_selectedRecipeSO.ingredientsList);
+
+        int aux = 0;
+        while(plateIngredients.Count < _minigamePlates.Length)
+        {
+            plateIngredients.Add(tempList[aux]);
+            aux++;
+        }
+
+        plateIngredients = ShuffleIngredients(plateIngredients);
+
+        // Generate dragable Ingredients on MINIGAME PANEL 
+        for(int i = 0; i < plateIngredients.Count; i++)
+        {
+            GameObject ingredient = Instantiate(plateIngredients[i]);
+            ingredient.transform.SetParent(_minigamePlates[i].transform);
+
+            ingredient.transform.localRotation = Quaternion.identity; 
+            ingredient.transform.localPosition = Vector3.zero;
+
+            ingredient.GetComponent<DragAndDropIngredient>().SetIconNativeSize();
+        }
+    }
+
+    private List<GameObject> ShuffleIngredients(List<GameObject> ingredients)
+    {
+        int n = ingredients.Count;
+
+        while (n > 1)
+        {
+            n--;
+            int k = Random.Range(0, n + 1); // UnityEngine.Random.Range
+            (ingredients[n], ingredients[k]) = (ingredients[k], ingredients[n]); // Swap elements
+        }
+        
+        return ingredients;
     }
 
     private void GenerateList()
