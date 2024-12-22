@@ -20,7 +20,6 @@ public class IngredientMinigameController : MinigameController
     protected override void Start()
     {
         base.Start();
-
         StartCoroutine(TimeCountdownDelay(_listTimerValue));
         GenerateList();
         GenerateIngredientsInPlates();
@@ -134,9 +133,11 @@ public class IngredientMinigameController : MinigameController
 
     protected override IEnumerator TimeCountdownDelay(float currentClockValue)
     {
+        AudioSystem.Instance.StopLoopingSFX("ClockTicking");
         _timeRemaining = currentClockValue;
         _isCountingDown = false;
         yield return new WaitForSeconds(_timerDelay);
         _isCountingDown = true;
+        AudioSystem.Instance.PlayLoopingSFX("ClockTicking");
     }
 }

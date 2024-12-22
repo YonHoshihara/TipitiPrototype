@@ -54,6 +54,7 @@ public class DragAndDropIngredient : MonoBehaviour, IPointerDownHandler, IBeginD
     {
         _rb.bodyType = RigidbodyType2D.Dynamic;
         _col.enabled = true;
+        AudioSystem.Instance.PlaySFX("DropIngredientInWater");
         SetLockedPosition();
     }
 

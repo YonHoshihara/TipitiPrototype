@@ -12,20 +12,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c2565cf2182d149838c74486899c3a, type: 3}
   m_Name: Soundtrack
   m_EditorClassIdentifier: 
-  sounds:
+  _mixer: {fileID: 24100000, guid: 7b1b3e97d813d6c4ca76a9cd59149d63, type: 2}
+  _sounds:
+  - name: MenuBGM
+    clip: {fileID: 8300000, guid: 259480dd597034b468bfc76e0a087b78, type: 3}
+    mixerGroup: BGM
+  - name: MinigameBGM
+    clip: {fileID: 8300000, guid: 93ed4dbc295df42409a29a53c088b985, type: 3}
+    mixerGroup: BGM
   - name: BoilingWater
     clip: {fileID: 8300000, guid: 6c8435b9cea464b4e974e47c95b0d20e, type: 3}
+    mixerGroup: Quiet
   - name: ButtonClickBack
     clip: {fileID: 8300000, guid: 8598771cec8e882418568d55552a5a37, type: 3}
+    mixerGroup: Quiet
   - name: ButtonClickForward
     clip: {fileID: 8300000, guid: 28197da886ee42a46967fc6d5b148d07, type: 3}
+    mixerGroup: Quiet
   - name: ButtonPass
     clip: {fileID: 8300000, guid: cae7479bb1a54a0499e9ad2ab0c42fdf, type: 3}
+    mixerGroup: SFX
   - name: ClockTicking
     clip: {fileID: 8300000, guid: 17c8cb4d556f88145bf6300dde28081c, type: 3}
+    mixerGroup: SFX
   - name: DropIngredientInWater
     clip: {fileID: 8300000, guid: fa728620d65736f43a99646defc5561c, type: 3}
+    mixerGroup: SFX
+  - name: GameWin
+    clip: {fileID: 8300000, guid: e773a57f7d077364b921a88a99cd6dbd, type: 3}
+    mixerGroup: Quiet
   - name: GameOver
     clip: {fileID: 8300000, guid: 9d29d7ae57f7ac04dbe4ff34dfb83b61, type: 3}
+    mixerGroup: Quiet
   - name: PlatedIngredient
     clip: {fileID: 8300000, guid: 66d8d708836f17a41b9ca0783d9200b9, type: 3}
+    mixerGroup: SFX

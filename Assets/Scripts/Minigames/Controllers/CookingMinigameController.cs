@@ -21,7 +21,7 @@ public class CookingMinigameController : MinigameController
     protected override void Start()
     {
         base.Start();
-
+        AudioSystem.Instance.PlayLoopingSFX("BoilingWater");
         EventManager.OnChangeCookingGameMecanicEvent += ChangeGameplayMode;
         EventManager.OnLaddleWasClickedEvent += CheckClick;
 

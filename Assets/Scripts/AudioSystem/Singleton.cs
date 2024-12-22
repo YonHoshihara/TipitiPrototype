@@ -66,7 +66,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
             }
             else if (_instance != this)
             {
-                Debug.LogWarning($"[Singleton] Duplicate instance of {typeof(T)} detected. Destroying: {gameObject.name}");
+                //Debug.LogWarning($"[Singleton] Duplicate instance of {typeof(T)} detected. Destroying: {gameObject.name}");
                 Destroy(gameObject);
             }
         }

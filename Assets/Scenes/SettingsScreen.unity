@@ -1577,8 +1577,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masterVolumeSlider: {fileID: 1274989348}
-  bgmVolumeSlider: {fileID: 892661174}
-  sfxVolumeSlider: {fileID: 285515996}
+  bgmVolumeSlider: {fileID: 285515996}
+  sfxVolumeSlider: {fileID: 892661174}
 --- !u!1 &505275751
 GameObject:
   m_ObjectHideFlags: 0

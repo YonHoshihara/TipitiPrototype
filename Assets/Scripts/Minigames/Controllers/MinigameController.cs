@@ -65,14 +65,18 @@ public class MinigameController : MonoBehaviour
 
     protected virtual IEnumerator TimeCountdownDelay(float currentClockValue)
     {
+        AudioSystem.Instance.StopLoopingSFX("ClockTicking");
         _timeRemaining = currentClockValue;
         _isCountingDown = false;
         yield return new WaitForSeconds(_timerDelay);
         _isCountingDown = true;
+        AudioSystem.Instance.PlayLoopingSFX("ClockTicking");
     }
 
     protected virtual void GameWin()
     {
+        AudioSystem.Instance.StopAllLoopingSFX();
+        AudioSystem.Instance.PlaySFX("GameWin");
         _isCountingDown = false;
         _victoryStatsSO.totalTime = _minigameTimerValue;
         _victoryStatsSO.finalTime = _timeRemaining;
@@ -82,6 +86,8 @@ public class MinigameController : MonoBehaviour
 
     protected virtual void GameOver()
     {
+        AudioSystem.Instance.StopAllLoopingSFX();
+        AudioSystem.Instance.PlaySFX("GameOver");
         _isCountingDown = false;
         _gameoverPanel.SetActive(true);
     }

@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
+using static Unity.VisualScripting.Member;
 
 public class AudioSystem : Singleton<AudioSystem>
 {
@@ -16,10 +18,8 @@ public class AudioSystem : Singleton<AudioSystem>
 
     private int _maxSfxSources = 10; // Limit the number of simultaneous SFX
 
-    protected override void Awake()
+    private void Start()
     {
-        base.Awake();
-
         if (_bgmAudioSource == null)
             _bgmAudioSource = gameObject.AddComponent<AudioSource>();
 
@@ -38,6 +38,12 @@ public class AudioSystem : Singleton<AudioSystem>
         SetMasterVolume(masterVolume);
         SetBackgroundMusicVolume(bgmVolume);
         SetSoundEffectsVolume(sfxVolume);
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
+    }
+
+    private void OnSceneUnloaded(Scene currentScene)
+    {
+        StopAllLoopingSFX();
     }
 
     // Plays a looping background music track
@@ -48,9 +54,15 @@ public class AudioSystem : Singleton<AudioSystem>
         var clip = _soundtrackSO.GetClipByName(soundName);
         if (clip == null) return;
 
+        if (_bgmAudioSource.clip == clip && _bgmAudioSource.isPlaying)
+        {
+            return;
+        }
+
         _bgmAudioSource.clip = clip;
         _bgmAudioSource.loop = true;
         _bgmAudioSource.Play();
+        _bgmAudioSource.outputAudioMixerGroup = _soundtrackSO.GetClipMixerGroup(clip);
     }
 
     // Stops the background music
@@ -72,6 +84,7 @@ public class AudioSystem : Singleton<AudioSystem>
             source.loop = false;
             source.clip = clip;
             source.Play();
+            source.outputAudioMixerGroup = _soundtrackSO.GetClipMixerGroup(clip);
         }
     }
 
@@ -88,15 +101,17 @@ public class AudioSystem : Singleton<AudioSystem>
             source.loop = true;
             source.clip = clip;
             source.Play();
+            source.outputAudioMixerGroup = _soundtrackSO.GetClipMixerGroup(clip);
         }
     }
+
 
     // Stops a specific looping sound effect
     public void StopLoopingSFX(string soundName)
     {
         foreach (var source in _sfxAudioSources)
         {
-            if (source.isPlaying && source.clip != null && source.clip.name == soundName)
+            if (source.isPlaying && source.clip != null && source.clip == _soundtrackSO.GetClipByName(soundName))
             {
                 source.Stop();
                 source.loop = false;
@@ -145,6 +160,18 @@ public class AudioSystem : Singleton<AudioSystem>
 
         Debug.LogWarning("All SFX AudioSources are in use!");
         return null;
+    }
+
+    public void StopAllLoopingSFX()
+    {
+        foreach (var source in _sfxAudioSources)
+        {
+            if (source.isPlaying && source.loop)
+            {
+                source.Stop();
+                source.loop = false;
+            }
+        }
     }
 
     private void OnApplicationQuit()

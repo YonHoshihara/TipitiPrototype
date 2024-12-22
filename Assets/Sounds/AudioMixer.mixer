@@ -9,7 +9,8 @@ AudioMixerGroupController:
   m_Name: SFX
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 7871da6e38234614693ed983dcebe164
-  m_Children: []
+  m_Children:
+  - {fileID: 6593903646290231069}
   m_Volume: d8e4cfcffbb0a90469a07ab21085359f
   m_Pitch: d05d3426e2ca45b45aed92a738b61649
   m_Send: 00000000000000000000000000000000
@@ -52,6 +53,20 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-726228559126366702
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 199b410cac09249479f153f541191cba
+  m_EffectName: Attenuation
+  m_MixLevel: ac3da096d45a6fd488601c3959ed5b44
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -79,6 +94,7 @@ AudioMixerController:
     - 532eeb5492fb2d544a70795f70f33163
     - bef0c47b031743f438ec07ed6dd0de5e
     - 7871da6e38234614693ed983dcebe164
+    - 995df29f489bb7346b51975e17690a09
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -127,8 +143,29 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: f1055c272a2e19d4ab0a9a9ed8d79720
   m_FloatValues:
+    500f8703110c35648b7eaf02539dbd30: -15
+    49ed3bf9abb4246448053ce16e34cf40: 0.0927423
     d8e4cfcffbb0a90469a07ab21085359f: 0
   m_TransitionOverrides: {}
+--- !u!243 &6593903646290231069
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Quiet
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 995df29f489bb7346b51975e17690a09
+  m_Children: []
+  m_Volume: 500f8703110c35648b7eaf02539dbd30
+  m_Pitch: bec8869b1b030ae49a594c49d8ea32b9
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -726228559126366702}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &8118843504513081803
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
