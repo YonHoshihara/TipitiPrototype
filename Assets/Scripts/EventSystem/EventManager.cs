@@ -25,6 +25,12 @@ public static class EventManager
 
     public delegate void OnChangeStepIconToIngredient();
     public static event OnChangeStepIconToIngredient OnChangeStepIconToIngredientEvent;
+
+    public delegate void OnLoadDialogue(DialogueSO dialogue);
+    public static event OnLoadDialogue OnLoadDialogueEvent;
+
+    public delegate void OnEndDialogue();
+    public static event OnEndDialogue OnEndDialogueEvent;
     #endregion
 
 
@@ -62,6 +68,16 @@ public static class EventManager
     public static void OnChangeStepIconToIngredientTrigger()
     {
         OnChangeStepIconToPotEvent?.Invoke();
+    }
+
+    public static void OnLoadDialogueTrigger(DialogueSO dialogue)
+    {
+        OnLoadDialogueEvent?.Invoke(dialogue);
+    }
+
+    public static void OnEndDialogueTrigger()
+    {
+        OnEndDialogueEvent?.Invoke();
     }
     #endregion
 }

@@ -1,0 +1,481 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8943193722313042469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1339c5eb6e6552479f24b682d32114b, type: 3}
+  m_Name: Neta
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1544, y: 344}
+  ports:
+    keys:
+    - _origin
+    - _choices
+    - _next
+    values:
+    - _fieldName: _origin
+      _node: {fileID: -8943193722313042469}
+      _typeQualifiedName: DialogueSegment, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: _next
+        node: {fileID: 360372883347070695}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _choices
+      _node: {fileID: -8943193722313042469}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _next
+      _node: {fileID: -8943193722313042469}
+      _typeQualifiedName: DialogueSegment, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: _origin
+        node: {fileID: 6518190129976928855}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  _origin: {fileID: 0}
+  _name: Neta
+  _sentence: "N\xE3o parece muito bom..."
+  _hasChoices: 0
+  _choices: []
+  _bubblePosition: {x: 0.71, y: 0.15}
+  _bubblePivot: {x: 0.5, y: 0}
+  _bubbleColor: {r: 0.8862746, g: 0.6117647, b: 0.9803922, a: 1}
+  _choicePosition: {x: 0, y: 0}
+  _choicePivot: {x: 0, y: 0}
+  _choiceColor: {r: 230, g: 180, b: 125, a: 1}
+  _next: {fileID: 0}
+--- !u!114 &-7501962511065610694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1339c5eb6e6552479f24b682d32114b, type: 3}
+  m_Name: "Vov\xF3"
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2072, y: 344}
+  ports:
+    keys:
+    - _origin
+    - _choices
+    - _next
+    values:
+    - _fieldName: _origin
+      _node: {fileID: -7501962511065610694}
+      _typeQualifiedName: DialogueSegment, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: _next
+        node: {fileID: 6518190129976928855}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _choices
+      _node: {fileID: -7501962511065610694}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _next
+      _node: {fileID: -7501962511065610694}
+      _typeQualifiedName: DialogueSegment, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  _origin: {fileID: 0}
+  _name: "Vov\xF3"
+  _sentence: Quer ajudar?
+  _hasChoices: 0
+  _choices: []
+  _bubblePosition: {x: 0.537, y: 0.21}
+  _bubblePivot: {x: 0.5, y: 0}
+  _bubbleColor: {r: 0.9803922, g: 0.59607846, b: 0.5686275, a: 1}
+  _choicePosition: {x: 0, y: 0}
+  _choicePivot: {x: 0, y: 0}
+  _choiceColor: {r: 230, g: 180, b: 125, a: 1}
+  _next: {fileID: 0}
+--- !u!114 &-563841636416529676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1339c5eb6e6552479f24b682d32114b, type: 3}
+  m_Name: Neta
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 792, y: 344}
+  ports:
+    keys:
+    - _origin
+    - _choices
+    - _next
+    values:
+    - _fieldName: _origin
+      _node: {fileID: -563841636416529676}
+      _typeQualifiedName: DialogueSegment, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: _next
+        node: {fileID: 1860860774155905102}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _choices
+      _node: {fileID: -563841636416529676}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _next
+      _node: {fileID: -563841636416529676}
+      _typeQualifiedName: DialogueSegment, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: _origin
+        node: {fileID: 6967589637343712141}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  _origin: {fileID: 0}
+  _name: Neta
+  _sentence: "O que \xE9 isso? Parece lama..."
+  _hasChoices: 0
+  _choices: []
+  _bubblePosition: {x: 0.71, y: 0.15}
+  _bubblePivot: {x: 0.5, y: 0}
+  _bubbleColor: {r: 0.8862746, g: 0.6117647, b: 0.9803922, a: 1}
+  _choicePosition: {x: 0, y: 0}
+  _choicePivot: {x: 0, y: 0}
+  _choiceColor: {r: 230, g: 180, b: 125, a: 1}
+  _next: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8647175500e5c8a409abaaeba2671001, type: 3}
+  m_Name: Cutscene1Dialogue2
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 1860860774155905102}
+  - {fileID: 6967589637343712141}
+  - {fileID: -563841636416529676}
+  - {fileID: -8943193722313042469}
+  - {fileID: 360372883347070695}
+  - {fileID: 6518190129976928855}
+  - {fileID: -7501962511065610694}
+--- !u!114 &360372883347070695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1339c5eb6e6552479f24b682d32114b, type: 3}
+  m_Name: "Vov\xF3"
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1288, y: 344}
+  ports:
+    keys:
+    - _origin
+    - _choices
+    - _next
+    values:
+    - _fieldName: _origin
+      _node: {fileID: 360372883347070695}
+      _typeQualifiedName: DialogueSegment, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: _next
+        node: {fileID: 6967589637343712141}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _choices
+      _node: {fileID: 360372883347070695}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _next
+      _node: {fileID: 360372883347070695}
+      _typeQualifiedName: DialogueSegment, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: _origin
+        node: {fileID: -8943193722313042469}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  _origin: {fileID: 0}
+  _name: "Vov\xF3"
+  _sentence: "Lama? Isso \xE9 maniva.\nA melhor comida nem sempre \xE9 bonita no
+    come\xE7o."
+  _hasChoices: 0
+  _choices: []
+  _bubblePosition: {x: 0.537, y: 0.21}
+  _bubblePivot: {x: 0.5, y: 0}
+  _bubbleColor: {r: 0.9803922, g: 0.59607846, b: 0.5686275, a: 1}
+  _choicePosition: {x: 0, y: 0}
+  _choicePivot: {x: 0, y: 0}
+  _choiceColor: {r: 230, g: 180, b: 125, a: 1}
+  _next: {fileID: 0}
+--- !u!114 &1860860774155905102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1339c5eb6e6552479f24b682d32114b, type: 3}
+  m_Name: "Vov\xF3"
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 536, y: 344}
+  ports:
+    keys:
+    - _origin
+    - _choices
+    - _next
+    values:
+    - _fieldName: _origin
+      _node: {fileID: 1860860774155905102}
+      _typeQualifiedName: DialogueSegment, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _choices
+      _node: {fileID: 1860860774155905102}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _next
+      _node: {fileID: 1860860774155905102}
+      _typeQualifiedName: DialogueSegment, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: _origin
+        node: {fileID: -563841636416529676}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  _origin: {fileID: 0}
+  _name: "Vov\xF3"
+  _sentence: "Eu sabia que voc\xEA ia aparecer.\nCozinha tem um jeito de chamar as
+    pessoas."
+  _hasChoices: 0
+  _choices: []
+  _bubblePosition: {x: 0.537, y: 0.21}
+  _bubblePivot: {x: 0.5, y: 0}
+  _bubbleColor: {r: 0.98039216, g: 0.59607846, b: 0.5686275, a: 1}
+  _choicePosition: {x: 0, y: 0}
+  _choicePivot: {x: 0, y: 0}
+  _choiceColor: {r: 230, g: 180, b: 125, a: 1}
+  _next: {fileID: 0}
+--- !u!114 &6518190129976928855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1339c5eb6e6552479f24b682d32114b, type: 3}
+  m_Name: "Vov\xF3"
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1816, y: 344}
+  ports:
+    keys:
+    - _origin
+    - _choices
+    - _next
+    values:
+    - _fieldName: _origin
+      _node: {fileID: 6518190129976928855}
+      _typeQualifiedName: DialogueSegment, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: _next
+        node: {fileID: -8943193722313042469}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _choices
+      _node: {fileID: 6518190129976928855}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _next
+      _node: {fileID: 6518190129976928855}
+      _typeQualifiedName: DialogueSegment, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: _origin
+        node: {fileID: -7501962511065610694}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  _origin: {fileID: 0}
+  _name: "Vov\xF3"
+  _sentence: "A vida \xE9 como uma receita, minha pequena.\nCom os ingredientes certos
+    e paci\xEAncia, vira algo maravilhoso."
+  _hasChoices: 0
+  _choices: []
+  _bubblePosition: {x: 0.537, y: 0.21}
+  _bubblePivot: {x: 0.5, y: 0}
+  _bubbleColor: {r: 0.9803922, g: 0.59607846, b: 0.5686275, a: 1}
+  _choicePosition: {x: 0, y: 0}
+  _choicePivot: {x: 0, y: 0}
+  _choiceColor: {r: 230, g: 180, b: 125, a: 1}
+  _next: {fileID: 0}
+--- !u!114 &6967589637343712141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1339c5eb6e6552479f24b682d32114b, type: 3}
+  m_Name: "Vov\xF3"
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1032, y: 344}
+  ports:
+    keys:
+    - _origin
+    - _choices
+    - _next
+    values:
+    - _fieldName: _origin
+      _node: {fileID: 6967589637343712141}
+      _typeQualifiedName: DialogueSegment, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: _next
+        node: {fileID: -563841636416529676}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _choices
+      _node: {fileID: 6967589637343712141}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _next
+      _node: {fileID: 6967589637343712141}
+      _typeQualifiedName: DialogueSegment, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: _origin
+        node: {fileID: 360372883347070695}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  _origin: {fileID: 0}
+  _name: "Vov\xF3"
+  _sentence: '*rindo*'
+  _hasChoices: 0
+  _choices: []
+  _bubblePosition: {x: 0.537, y: 0.21}
+  _bubblePivot: {x: 0.5, y: 0}
+  _bubbleColor: {r: 0.9803922, g: 0.59607846, b: 0.5686275, a: 1}
+  _choicePosition: {x: 0, y: 0}
+  _choicePivot: {x: 0, y: 0}
+  _choiceColor: {r: 230, g: 180, b: 125, a: 1}
+  _next: {fileID: 0}
