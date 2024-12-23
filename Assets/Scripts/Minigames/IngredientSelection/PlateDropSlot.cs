@@ -7,42 +7,52 @@ using UnityEngine.EventSystems;
 public class PlateDropSlot : MonoBehaviour, IDropHandler
 {
     [SerializeField] protected RecipeDetailsSO _recipeSO;
-    protected List<GameObject> _droppedObjects;
+    [SerializeField] protected AllIngredientsList _allIngredientListSO;
+    protected List<string> _droppedIngredients;
+    protected List<string> _recipeIngredientsNames;
 
     protected virtual void Start()
     {
-        _droppedObjects = new List<GameObject>();
+        _droppedIngredients = new List<string>();
+        _recipeIngredientsNames = new List<string>();
+
+        foreach(GameObject ingredient in _recipeSO.ingredientsList)
+        {
+            _recipeIngredientsNames.Add(ingredient.GetComponent<DragAndDropIngredient>().GetIngredientName());
+        }
     }
 
-    public virtual void OnDrop(PointerEventData eventData)
-    {
-        /*
-        droppedObject = eventData.pointerDrag;
+    public virtual void OnDrop(PointerEventData eventData){}
 
-        if (droppedObject != null && !_droppedObjects.Contains(droppedObject))
+    public virtual void AddIngredientToList(GameObject ingredient)
+    {
+        DragAndDropIngredient ingredientScript = ingredient.GetComponent<DragAndDropIngredient>();
+        
+        if(!CheckIfIngredientIsOnRecipe(ingredientScript.GetIngredientName())) return;
+
+        if(!_droppedIngredients.Contains(ingredientScript.GetIngredientName()))
         {
-            _droppedObjects.Add(droppedObject);
+            AudioSystem.Instance.PlaySFX("PlatedIngredient");
+            _droppedIngredients.Add(ingredientScript.GetIngredientName());
+            ingredientScript.SetLockedPosition();
         }
 
-        CheckIngredients();
-        */
+        CheckIngredientsAmmount();
     }
 
-    protected virtual void CheckIngredients()
+    protected virtual void CheckIngredientsAmmount()
     {
-        if (_droppedObjects.Count == _recipeSO.ingredientsList.Count)
+        if (_droppedIngredients.Count == _recipeSO.ingredientsList.Count)
         {
             EventManager.OnGameWinTrigger();
         }
     }
 
-    public virtual void AddIngredientToList(GameObject ingredient)
+    protected virtual bool CheckIfIngredientIsOnRecipe(string ingredient)
     {
-        if(!_droppedObjects.Contains(ingredient))
-        {
-            _droppedObjects.Add(ingredient);
-        }
-
-        CheckIngredients();
+        if(_recipeIngredientsNames.Contains(ingredient))
+            return true;
+        else
+            return false;
     }
 }

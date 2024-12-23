@@ -30,7 +30,7 @@ public class DragAndDropIngredient : MonoBehaviour, IPointerDownHandler, IBeginD
         return _uiVersion;
     }
 
-    private void SetLockedPosition()
+    public void SetLockedPosition()
     {
         _isLocked = true;
     }
@@ -54,6 +54,7 @@ public class DragAndDropIngredient : MonoBehaviour, IPointerDownHandler, IBeginD
     {
         _rb.bodyType = RigidbodyType2D.Dynamic;
         _col.enabled = true;
+        AudioSystem.Instance.PlaySFX("DropIngredientInWater");
         SetLockedPosition();
     }
 
@@ -86,7 +87,7 @@ public class DragAndDropIngredient : MonoBehaviour, IPointerDownHandler, IBeginD
             if (result.gameObject.CompareTag("DropZone"))
             {
                 result.gameObject.GetComponent<PlateDropSlot>().AddIngredientToList(this.gameObject);
-                SetLockedPosition();
+                //SetLockedPosition();
                 break;
             }
         }
