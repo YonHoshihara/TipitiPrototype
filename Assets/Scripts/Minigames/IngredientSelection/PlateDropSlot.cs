@@ -32,6 +32,7 @@ public class PlateDropSlot : MonoBehaviour, IDropHandler
 
         if(!_droppedIngredients.Contains(ingredientScript.GetIngredientName()))
         {
+            AudioSystem.Instance.PlaySFX("PlatedIngredient");
             _droppedIngredients.Add(ingredientScript.GetIngredientName());
             ingredientScript.SetLockedPosition();
         }
