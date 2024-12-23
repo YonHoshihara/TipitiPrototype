@@ -484,6 +484,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UIFunctions, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 5198019903483437370, guid: 93ff73dd9f71c3840a62b9f9cc41821a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Cutscene1
+      objectReference: {fileID: 0}
     - target: {fileID: 5653786038171669608, guid: 93ff73dd9f71c3840a62b9f9cc41821a, type: 3}
       propertyPath: m_Name
       value: 'Menu '

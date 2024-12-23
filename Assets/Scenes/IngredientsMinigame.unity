@@ -973,6 +973,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5072648694217113199, guid: a144ff3ef8e23b24b86c99c1f1e524b6, type: 3}
+      propertyPath: m_text
+      value: Escolhendo os ingredientes
+      objectReference: {fileID: 0}
     - target: {fileID: 7315382127491764971, guid: a144ff3ef8e23b24b86c99c1f1e524b6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
