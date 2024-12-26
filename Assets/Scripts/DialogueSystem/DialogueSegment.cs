@@ -1,14 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
-using UnityEditor.MemoryProfiler;
 using UnityEngine;
 using XNode;
-using static UnityEngine.GraphicsBuffer;
-using static XNodeEditor.NodeEditor;
+#if UNITY_EDITOR
 using XNodeEditor;
-using UnityEngine.Serialization;
-using UnityEngine.Events;
+#endif
 
 public class DialogueSegment : Node
 {
@@ -103,7 +99,7 @@ public class DialogueSegment : Node
     }
 }
 
-
+#if UNITY_EDITOR
 [CustomNodeEditor(typeof(DialogueSegment))]
 public class SimpleNodeEditor : NodeEditor
 {
@@ -141,3 +137,4 @@ public class SimpleNodeEditor : NodeEditor
         serializedObject.ApplyModifiedProperties();
     }
 }
+#endif

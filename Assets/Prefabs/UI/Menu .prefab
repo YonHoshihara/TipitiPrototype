@@ -527,7 +527,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: IngredientsMinigame
+          m_StringArgument: Cutscene1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &4083238724747837718
@@ -1700,6 +1700,7 @@ GameObject:
   - component: {fileID: 6159270681387437415}
   - component: {fileID: 4388867895526873634}
   - component: {fileID: 2251414442028112215}
+  - component: {fileID: 8731578840746540730}
   m_Layer: 5
   m_Name: 'Menu '
   m_TagString: Untagged
@@ -1777,10 +1778,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1865,6 +1866,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77363e47dcc96d64c856e6d945e072bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8731578840746540730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5653786038171669608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e173e5e5b6ff94ea57788c13d21e26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGMName: MenuBGM
 --- !u!1 &5659713020341629453
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,7 +2149,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6125648071942069411}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2251414442028112215}
+        m_TargetAssemblyTypeName: UIFunctions, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SettingsScreen
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9010054464142092359
 MonoBehaviour:
   m_ObjectHideFlags: 0
