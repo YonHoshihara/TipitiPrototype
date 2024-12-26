@@ -110,8 +110,10 @@ MonoBehaviour:
   - "> Incr\xEDvel"
   _bubblePosition: {x: -0.5, y: 0}
   _bubblePivot: {x: 0, y: 0.5}
+  _bubbleColor: {r: 0.90196085, g: 0.69803923, b: 0.49411768, a: 1}
   _choicePosition: {x: 0, y: 0}
   _choicePivot: {x: 0, y: 0}
+  _choiceColor: {r: 0.3529412, g: 0.3803922, b: 0.41176474, a: 1}
   _next: {fileID: 0}
 --- !u!114 &-2301421427256264769
 MonoBehaviour:
@@ -196,8 +198,10 @@ MonoBehaviour:
   _choices: []
   _bubblePosition: {x: 0.5, y: 0}
   _bubblePivot: {x: 1, y: 0.5}
+  _bubbleColor: {r: 0.90196085, g: 0.69803923, b: 0.49411768, a: 1}
   _choicePosition: {x: 0, y: 0}
   _choicePivot: {x: 0, y: 0}
+  _choiceColor: {r: 0, g: 0, b: 0, a: 0}
   _next: {fileID: 0}
 --- !u!114 &-2052905656917191602
 MonoBehaviour:
@@ -306,8 +310,10 @@ MonoBehaviour:
   - "> E da\xED? N\xE3o quero testar nada."
   _bubblePosition: {x: -0.5, y: 0}
   _bubblePivot: {x: 0, y: 0.5}
+  _bubbleColor: {r: 0.90196085, g: 0.69803923, b: 0.49411768, a: 1}
   _choicePosition: {x: 0, y: 0}
   _choicePivot: {x: 0, y: 0}
+  _choiceColor: {r: 0.3529412, g: 0.3803922, b: 0.41176474, a: 1}
   _next: {fileID: 0}
 --- !u!114 &-1180935924592831306
 MonoBehaviour:
@@ -389,8 +395,10 @@ MonoBehaviour:
   _choices: []
   _bubblePosition: {x: 0, y: 0}
   _bubblePivot: {x: 0.5, y: 0}
+  _bubbleColor: {r: 0.90196085, g: 0.69803923, b: 0.49411768, a: 1}
   _choicePosition: {x: 0, y: 0}
   _choicePivot: {x: 0, y: 0}
+  _choiceColor: {r: 0, g: 0, b: 0, a: 0}
   _next: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -470,8 +478,10 @@ MonoBehaviour:
   _choices: []
   _bubblePosition: {x: 0, y: 0}
   _bubblePivot: {x: 0.5, y: 1}
+  _bubbleColor: {r: 0.90196085, g: 0.69803923, b: 0.49411768, a: 1}
   _choicePosition: {x: 0, y: 0}
   _choicePivot: {x: 0, y: 0}
+  _choiceColor: {r: 0, g: 0, b: 0, a: 0}
   _next: {fileID: 0}
 --- !u!114 &3256325831538496733
 MonoBehaviour:
@@ -534,8 +544,10 @@ MonoBehaviour:
   _choices: []
   _bubblePosition: {x: 0, y: 0}
   _bubblePivot: {x: 0.5, y: 0}
+  _bubbleColor: {r: 0.90196085, g: 0.69803923, b: 0.49411768, a: 1}
   _choicePosition: {x: 0, y: 0}
   _choicePivot: {x: 0, y: 0}
+  _choiceColor: {r: 0, g: 0, b: 0, a: 0}
   _next: {fileID: 0}
 --- !u!114 &7854508721007813265
 MonoBehaviour:
@@ -635,6 +647,8 @@ MonoBehaviour:
   - "> Aqui s\xF3 tem uma escolha, n\xE3o estou nem escolhendo."
   _bubblePosition: {x: 0.5, y: 0}
   _bubblePivot: {x: 1, y: 0.5}
+  _bubbleColor: {r: 0.90196085, g: 0.69803923, b: 0.49411768, a: 1}
   _choicePosition: {x: 0.5, y: 0}
   _choicePivot: {x: 1, y: 0.5}
+  _choiceColor: {r: 0.90196085, g: 0.69803923, b: 0.49411768, a: 1}
   _next: {fileID: 0}

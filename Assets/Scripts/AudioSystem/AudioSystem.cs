@@ -174,8 +174,9 @@ public class AudioSystem : Singleton<AudioSystem>
         }
     }
 
-    private void OnApplicationQuit()
+    protected override void OnApplicationQuit()
     {
+        base.OnApplicationQuit();
         PlayerPrefs.Save();
     }
 }

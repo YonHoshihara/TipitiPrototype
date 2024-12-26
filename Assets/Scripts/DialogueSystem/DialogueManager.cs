@@ -5,12 +5,14 @@ using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private RectTransform _dialoguePanel;
-    [SerializeField] private RectTransform _choicePanel;
+    [SerializeField] private Image _dialoguePanel;
+    [SerializeField] private Transform _choicePanel;
     [SerializeField] private TextMeshProUGUI _dialogueText;
     [SerializeField] private DialogueSO _loadedDialogue;
     [SerializeField] private DialogueChoiceUI _choicePrefab;
@@ -27,6 +29,12 @@ public class DialogueManager : MonoBehaviour
     {
         if (_playDialogueOnAwake)
             StartDialogue(_loadedDialogue);
+        EventManager.OnLoadDialogueEvent += StartDialogue;
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.OnLoadDialogueEvent -= StartDialogue;
     }
 
     private void Update()
@@ -41,7 +49,7 @@ public class DialogueManager : MonoBehaviour
         }
         if(_sizeAdjustment < 1)
         {
-            _dialoguePanel.sizeDelta = Vector2.LerpUnclamped(_dialoguePanel.sizeDelta, _textSize, _sizeAdjustment);
+            _dialoguePanel.rectTransform.sizeDelta = Vector2.LerpUnclamped(_dialoguePanel.rectTransform.sizeDelta, _textSize, _sizeAdjustment);
             _sizeAdjustment = Mathf.Clamp01(_sizeAdjustment + Time.deltaTime * _bubbleResizeSpeed);
         }
     }
@@ -68,6 +76,7 @@ public class DialogueManager : MonoBehaviour
             Destroy(child.gameObject);
         }
         _dialogueText.text = "";
+        _dialoguePanel.color = _currentSegment.ChoiceColor;
         var choiceText = "";
         List<string> list = _currentSegment.GetChoices();
         for (int i = 0; i < list.Count; i++)
@@ -80,10 +89,10 @@ public class DialogueManager : MonoBehaviour
         _textSize = _dialogueText.GetPreferredValues(choiceText);
         _sizeAdjustment = 0;
         var calculatedPosition = new Vector2(_currentSegment.ChoicePosition.x * Screen.width, _currentSegment.ChoicePosition.y * Screen.height);
-        if (_dialoguePanel.anchoredPosition != calculatedPosition)
-            _dialoguePanel.sizeDelta = Vector2.zero;
-        _dialoguePanel.anchoredPosition = calculatedPosition;
-        _dialoguePanel.pivot = _currentSegment.ChoicePivot;
+        if (_dialoguePanel.rectTransform.anchoredPosition != calculatedPosition)
+            _dialoguePanel.rectTransform.sizeDelta = Vector2.zero;
+        _dialoguePanel.rectTransform.anchoredPosition = calculatedPosition;
+        _dialoguePanel.rectTransform.pivot = _currentSegment.ChoicePivot;
         yield return new WaitForSeconds(1f);
         for (int i = 0; i < list.Count; i++)
         {
@@ -105,13 +114,14 @@ public class DialogueManager : MonoBehaviour
         }
         _currentSegment = dialogueSegment;
         _dialogueText.text = "";
+        _dialoguePanel.color = dialogueSegment.BubbleColor;
         _textSize = _dialogueText.GetPreferredValues(dialogueSegment.GetSentence());
         _sizeAdjustment = 0;
         var calculatedPosition = new Vector2(dialogueSegment.BubblePosition.x * Screen.width, dialogueSegment.BubblePosition.y * Screen.height);
-        if (_dialoguePanel.anchoredPosition != calculatedPosition)
-            _dialoguePanel.sizeDelta = Vector2.zero;
-        _dialoguePanel.anchoredPosition = calculatedPosition;
-        _dialoguePanel.pivot = dialogueSegment.BubblePivot;
+        if (_dialoguePanel.rectTransform.anchoredPosition != calculatedPosition)
+            _dialoguePanel.rectTransform.sizeDelta = Vector2.zero;
+        _dialoguePanel.rectTransform.anchoredPosition = calculatedPosition;
+        _dialoguePanel.rectTransform.pivot = dialogueSegment.BubblePivot;
         yield return new WaitForSeconds(1f);
         yield return StartCoroutine(TypeSentence(dialogueSegment.GetSentence()));
         if (dialogueSegment.HasChoices)
@@ -146,5 +156,6 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         _dialoguePanel.gameObject.SetActive(false);
+        EventManager.OnEndDialogueTrigger();
     }
 }

@@ -8,6 +8,7 @@ using static UnityEngine.GraphicsBuffer;
 using static XNodeEditor.NodeEditor;
 using XNodeEditor;
 using UnityEngine.Serialization;
+using UnityEngine.Events;
 
 public class DialogueSegment : Node
 {
@@ -27,9 +28,11 @@ public class DialogueSegment : Node
 
     [SerializeField] private Vector2 _bubblePosition;
     [SerializeField] private Vector2 _bubblePivot;
+    [SerializeField] private Color _bubbleColor = new(230, 180, 125);
 
     [SerializeField] private Vector2 _choicePosition;
     [SerializeField] private Vector2 _choicePivot;
+    [SerializeField] private Color _choiceColor = new(230, 180, 125);
 
     [Output(connectionType = ConnectionType.Override)]
     [SerializeField] private DialogueSegment _next;
@@ -37,8 +40,11 @@ public class DialogueSegment : Node
     public bool HasChoices { get => _hasChoices;}
     public Vector2 BubblePivot { get => _bubblePivot; }
     public Vector2 BubblePosition { get => _bubblePosition; }
+    public Color BubbleColor { get => _bubbleColor; }
+
     public Vector2 ChoicePosition { get => _choicePosition; set => _choicePosition = value; }
     public Vector2 ChoicePivot { get => _choicePivot; set => _choicePivot = value; }
+    public Color ChoiceColor { get => _choiceColor; }
 
     public override object GetValue(NodePort port)
     {
@@ -118,12 +124,14 @@ public class SimpleNodeEditor : NodeEditor
         NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_sentence"));
         NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_bubblePosition"));
         NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_bubblePivot"));
+        NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_bubbleColor"));
         NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_hasChoices"));
         if (dialogueSegment.HasChoices)
         {
             NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_choices"));
             NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_choicePosition"));
             NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_choicePivot"));
+            NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_choiceColor"));
         }
         else
             NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_next"));
