@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class UIFunctions : MonoBehaviour
 {
+    private void Start()
+    {
+        EventManager.OnLoadNextLevelEvent += LoadLevel;
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.OnLoadNextLevelEvent -= LoadLevel;
+    }
+
     public void PlayGameButton(string sceneName)
     {
         AudioSystem.Instance.PlaySFX("ButtonClickForward");

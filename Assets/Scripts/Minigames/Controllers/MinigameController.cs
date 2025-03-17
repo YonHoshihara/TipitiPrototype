@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MinigameController : MonoBehaviour
 {
     [Header("Base Minigame References")]
-    [SerializeField] protected RecipeDetailsSO _selectedRecipeSO;
+    [SerializeField] protected SelectedRecipeSO _selectedRecipe;
     [SerializeField] protected VictoryStatsSO _victoryStatsSO;
     [SerializeField] protected Image _minigameClock;
     [SerializeField] protected GameObject _victoryPanel;
@@ -19,9 +19,11 @@ public class MinigameController : MonoBehaviour
     [SerializeField] protected float _timerDelay;
     protected float _timeRemaining;
     protected bool _isCountingDown;
+    protected RecipeDetailsSO _currentRecipeSO;
 
     protected virtual void Start()
     {
+        _currentRecipeSO = _selectedRecipe.recipe;
         EventManager.OnGameWinEvent += GameWin;
         EventManager.OnGameOverEvent += GameOver;
     }
@@ -35,9 +37,9 @@ public class MinigameController : MonoBehaviour
     protected virtual void GenerateIngredientsInPlates()
     {
         // Generate dragable Ingredients on MINIGAME PANEL 
-        for(int i = 0; i < _selectedRecipeSO.ingredientsList.Count; i++)
+        for(int i = 0; i < _currentRecipeSO.ingredientsList.Count; i++)
         {
-            GameObject ingredient = Instantiate(_selectedRecipeSO.ingredientsList[i]);
+            GameObject ingredient = Instantiate(_currentRecipeSO.ingredientsList[i]);
             ingredient.transform.SetParent(_minigamePlates[i].transform);
 
             ingredient.transform.localRotation = Quaternion.identity; 

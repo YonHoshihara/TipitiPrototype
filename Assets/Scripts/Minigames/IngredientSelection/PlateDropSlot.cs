@@ -6,13 +6,15 @@ using UnityEngine.EventSystems;
 
 public class PlateDropSlot : MonoBehaviour, IDropHandler
 {
-    [SerializeField] protected RecipeDetailsSO _recipeSO;
+    [SerializeField] protected SelectedRecipeSO _selectedRecipeSO;
     [SerializeField] protected AllIngredientsList _allIngredientListSO;
     protected List<string> _droppedIngredients;
     protected List<string> _recipeIngredientsNames;
+    protected RecipeDetailsSO _recipeSO;
 
     protected virtual void Start()
     {
+        _recipeSO = _selectedRecipeSO.recipe;
         _droppedIngredients = new List<string>();
         _recipeIngredientsNames = new List<string>();
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class IngredientMinigameController : MinigameController
     [SerializeField] private Image _listClock;
     [SerializeField] private GameObject _listContentGameobject;
     [SerializeField] private GameObject _listPanel;
+    [SerializeField] private TMP_Text _recipeNameTxt;
 
     [Header("Separation Minigame Variables")]
     [SerializeField] private float _listTimerValue;    
@@ -23,6 +25,8 @@ public class IngredientMinigameController : MinigameController
         StartCoroutine(TimeCountdownDelay(_listTimerValue));
         GenerateList();
         GenerateIngredientsInPlates();
+
+        _recipeNameTxt.text = _selectedRecipe.recipe.recipeName;
     }
 
     protected override void OnDestroy()
@@ -49,9 +53,9 @@ public class IngredientMinigameController : MinigameController
 
     protected override void GenerateIngredientsInPlates()
     {
-        List<GameObject> tempList = _allIngredientsSO._ingredientPFB.Except(_selectedRecipeSO.ingredientsList).ToList();
+        List<GameObject> tempList = _allIngredientsSO._ingredientPFB.Except(_currentRecipeSO.ingredientsList).ToList();
         List<GameObject> plateIngredients = new List<GameObject>();
-        plateIngredients.AddRange(_selectedRecipeSO.ingredientsList);
+        plateIngredients.AddRange(_currentRecipeSO.ingredientsList);
 
         int aux = 0;
         while(plateIngredients.Count < _minigamePlates.Length)
@@ -92,9 +96,9 @@ public class IngredientMinigameController : MinigameController
     private void GenerateList()
     {
         // Generate ingredient list on LIST PANEL 
-        for(int i = 0; i < _selectedRecipeSO.ingredientsList.Count; i++)
+        for(int i = 0; i < _currentRecipeSO.ingredientsList.Count; i++)
         {
-            var ingredientScript = _selectedRecipeSO.ingredientsList[i].GetComponent<DragAndDropIngredient>();
+            var ingredientScript = _currentRecipeSO.ingredientsList[i].GetComponent<DragAndDropIngredient>();
 
             GameObject ingredient = Instantiate(ingredientScript.GetUIVersion());
             ingredient.transform.SetParent(_listContentGameobject.transform);
