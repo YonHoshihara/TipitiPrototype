@@ -88,8 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59cae161e6c1f834990e5387747adcf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _recipeSO: {fileID: 11400000, guid: 6466d3a06be5bbe43b664a9ea095f215, type: 2}
-  _allIngredientListSO: {fileID: 0}
+  _selectedRecipeSO: {fileID: 11400000, guid: 725e2f543f6f516488727504ab2c45c9, type: 2}
+  _allIngredientListSO: {fileID: 11400000, guid: 35ad1d97cf775de459c7e3de631e53b9, type: 2}
 --- !u!1 &1312229818115352949
 GameObject:
   m_ObjectHideFlags: 0

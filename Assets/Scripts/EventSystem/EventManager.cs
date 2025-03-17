@@ -31,6 +31,9 @@ public static class EventManager
 
     public delegate void OnEndDialogue();
     public static event OnEndDialogue OnEndDialogueEvent;
+
+    public delegate void OnLoadNextLevel(string lvl);
+    public static event OnLoadNextLevel OnLoadNextLevelEvent;
     #endregion
 
 
@@ -78,6 +81,11 @@ public static class EventManager
     public static void OnEndDialogueTrigger()
     {
         OnEndDialogueEvent?.Invoke();
+    }
+
+    public static void OnLoadNextLevelTrigger(string lvl)
+    {
+        OnLoadNextLevelEvent?.Invoke(lvl);
     }
     #endregion
 }

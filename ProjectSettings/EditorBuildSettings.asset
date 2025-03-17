@@ -12,15 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScene.unity
     guid: ed02938f40930f5418a72bca43f6c3dc
   - enabled: 1
-    path: Assets/Scenes/IngredientsMinigame.unity
-    guid: c67683c2cd86d1548a3855c2a23e3232
-  - enabled: 1
-    path: Assets/Scenes/CookingMinigame.unity
-    guid: 63d79558dce243540af27b169457b9c8
+    path: Assets/Scenes/RecipeChoiceScene.unity
+    guid: 382b05c8c1d2c7b46bcb3f3615e864ac
   - enabled: 1
     path: Assets/Scenes/SettingsScreen.unity
     guid: 7d8726856cf2dab42a0205b16626663a
   - enabled: 1
     path: Assets/Scenes/Cutscene1.unity
     guid: 5f6f2ab753140b54eb728c1aff3b2fbc
+  - enabled: 1
+    path: Assets/Scenes/Minigames/IngredientsMinigame.unity
+    guid: c67683c2cd86d1548a3855c2a23e3232
+  - enabled: 1
+    path: Assets/Scenes/Minigames/CookingMinigame.unity
+    guid: 63d79558dce243540af27b169457b9c8
+  - enabled: 1
+    path: Assets/Scenes/Minigames/MixerMinigame.unity
+    guid: 8edf21094d50a6d468659a09174c8aad
   m_configObjects: {}

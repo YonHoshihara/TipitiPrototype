@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Minigame 1
+  m_text: Passo x
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c644e2a4a62a6a54581abb33c8e6ad31, type: 2}
   m_sharedMaterial: {fileID: 2463580011880624897, guid: c644e2a4a62a6a54581abb33c8e6ad31, type: 2}
@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8726b984a61ed44895b91a67b19f9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentRecipe: {fileID: 11400000, guid: 725e2f543f6f516488727504ab2c45c9, type: 2}
   _nomeMinigameTxt: {fileID: 5072648694217113199}
   _passoMinigameTxt: {fileID: 8457587959896984628}
   _animator: {fileID: 899627116505886890}
@@ -426,7 +427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nome Minigame
+  m_text: "Hora\_de\_preparar"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c644e2a4a62a6a54581abb33c8e6ad31, type: 2}
   m_sharedMaterial: {fileID: 2463580011880624897, guid: c644e2a4a62a6a54581abb33c8e6ad31, type: 2}

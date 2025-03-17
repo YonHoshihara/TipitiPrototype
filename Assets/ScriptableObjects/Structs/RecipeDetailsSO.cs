@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,5 +7,18 @@ using UnityEngine;
 public class RecipeDetailsSO : ScriptableObject
 {
     public string recipeName;
+    public Sprite finishedRecipeSprite;
     public List<GameObject> ingredientsList;
+    public List<String> steps;
+    public int recipeStepIndex = 0;
+
+    public int GetCurrentRecipeStep()
+    {
+        return recipeStepIndex + 1;
+    }
+
+    private void ResetStep()
+    {
+        recipeStepIndex = 0;
+    }
 }
