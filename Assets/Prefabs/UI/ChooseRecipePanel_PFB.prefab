@@ -1604,7 +1604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _recipe: {fileID: 11400000, guid: 6466d3a06be5bbe43b664a9ea095f215, type: 2}
   _selectedRecipeSO: {fileID: 11400000, guid: 725e2f543f6f516488727504ab2c45c9, type: 2}
-  _specialFirstScene: 
+  _specialFirstScene: Cutscene1
 --- !u!1 &8237993544378647324
 GameObject:
   m_ObjectHideFlags: 0

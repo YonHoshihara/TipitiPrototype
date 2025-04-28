@@ -1825,7 +1825,7 @@ MonoBehaviour:
   _victoryPanel: {fileID: 187387816}
   _gameoverPanel: {fileID: 1824136288}
   _minigamePlates: []
-  _minigameTimerValue: 15
+  _minigameTimerValue: 20
   _timerDelay: 1.5
   _rightPoint: {fileID: 721430015}
   _middlePoint: {fileID: 2070996752}

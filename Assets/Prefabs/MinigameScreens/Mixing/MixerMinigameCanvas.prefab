@@ -144,7 +144,7 @@ MonoBehaviour:
   - {fileID: 5374710126757132235}
   - {fileID: 509943082575828238}
   - {fileID: 8310653167967876738}
-  _minigameTimerValue: 13
+  _minigameTimerValue: 20
   _timerDelay: 1.5
   _batedeira: {fileID: 2934617774680946282}
   _massa: {fileID: 7126293080414781159}

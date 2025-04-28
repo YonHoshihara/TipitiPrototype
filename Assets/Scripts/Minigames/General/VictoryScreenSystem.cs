@@ -32,6 +32,8 @@ public class VictoryScreenSystem : MonoBehaviour
                 _selectedRecipeSO.recipe = _selectedRecipeSO.recipe.nextRecipe;
                 _selectedRecipeSO.recipe.recipeStepIndex = -1;
 
+                SelectedRecipeManager.Instance.SelectedRecipe = _selectedRecipeSO.recipe;
+
                 _defaultPanel.SetActive(true);
                 _endRecipePanel.SetActive(false);
                 SetStarRate(_defaultPanelStars);

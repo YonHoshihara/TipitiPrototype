@@ -23,7 +23,8 @@ public class MinigameController : MonoBehaviour
 
     protected virtual void Start()
     {
-        _currentRecipeSO = _selectedRecipe.recipe;
+        //_currentRecipeSO = _selectedRecipe.recipe;
+        _currentRecipeSO = SelectedRecipeManager.Instance.SelectedRecipe;
         EventManager.OnGameWinEvent += GameWin;
         EventManager.OnGameOverEvent += GameOver;
     }
