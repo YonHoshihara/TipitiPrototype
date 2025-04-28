@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Mixer : PlateDropSlot
 {
     [SerializeField] private Image _stepIconImg;
+    [SerializeField] private Image _fundoBatedeira;
     [SerializeField] private Sprite _mixerSprite;
     private int _ingredientListIndex = 0;
     private bool _allIngredientsAdded = false;
@@ -36,7 +37,8 @@ public class Mixer : PlateDropSlot
         CheckIngredientsAmmount();
         _ingredientListIndex += 1;
         SetStepIconImg();
-        ingredientScript.IsInsideCookingPot();
+        ingredientScript.IsInsideMixer();
+        ingredient.transform.parent = _fundoBatedeira.transform;
     }
 
     protected override void CheckIngredientsAmmount()

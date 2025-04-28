@@ -12,7 +12,10 @@ public class RecipeSetter : MonoBehaviour
     {
         _selectedRecipeSO.recipe = _recipe;
         _selectedRecipeSO.recipe.recipeStepIndex = 0;
-        StartCoroutine(LoadNextScene());
+        SelectedRecipeManager.Instance.SelectedRecipe = _recipe;
+
+        if (_selectedRecipeSO.recipe !=  null)
+            StartCoroutine(LoadNextScene());
     }
 
     private IEnumerator LoadNextScene()
@@ -20,9 +23,9 @@ public class RecipeSetter : MonoBehaviour
         _selectedRecipeSO.recipe = _recipe;
         yield return new WaitForSeconds(0.3f);
 
-        if(_specialFirstScene == "" || _specialFirstScene == null)
+        if (_specialFirstScene == "" || _specialFirstScene == null)
             EventManager.OnLoadNextLevelTrigger(_recipe.steps[0]);
         else
-            EventManager.OnLoadNextLevelTrigger(_specialFirstScene);
+            EventManager.OnLoadNextLevelTrigger(_specialFirstScene.ToString());
     }
 }

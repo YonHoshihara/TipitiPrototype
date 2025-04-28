@@ -20,10 +20,24 @@ public class VictoryScreenSystem : MonoBehaviour
 
         if(index + 1 >= _selectedRecipeSO.recipe.steps.Count)
         {
-            _defaultPanel.SetActive(false);
-            _endRecipePanel.SetActive(true);
-            SetStarRate(_finishedRecipePanelStars);
-            _finishedRecipeImg.sprite = _selectedRecipeSO.recipe.finishedRecipeSprite;
+            if(_selectedRecipeSO.recipe.nextRecipe == null)
+            {
+                _defaultPanel.SetActive(false);
+                _endRecipePanel.SetActive(true);
+                SetStarRate(_finishedRecipePanelStars);
+                _finishedRecipeImg.sprite = _selectedRecipeSO.recipe.finishedRecipeSprite;
+            }
+            else
+            {
+                _selectedRecipeSO.recipe = _selectedRecipeSO.recipe.nextRecipe;
+                _selectedRecipeSO.recipe.recipeStepIndex = -1;
+
+                SelectedRecipeManager.Instance.SelectedRecipe = _selectedRecipeSO.recipe;
+
+                _defaultPanel.SetActive(true);
+                _endRecipePanel.SetActive(false);
+                SetStarRate(_defaultPanelStars);
+            }
         }
         else
         {

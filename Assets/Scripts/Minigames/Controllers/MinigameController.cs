@@ -23,7 +23,8 @@ public class MinigameController : MonoBehaviour
 
     protected virtual void Start()
     {
-        _currentRecipeSO = _selectedRecipe.recipe;
+        //_currentRecipeSO = _selectedRecipe.recipe;
+        _currentRecipeSO = SelectedRecipeManager.Instance.SelectedRecipe;
         EventManager.OnGameWinEvent += GameWin;
         EventManager.OnGameOverEvent += GameOver;
     }
@@ -67,6 +68,7 @@ public class MinigameController : MonoBehaviour
 
     protected virtual IEnumerator TimeCountdownDelay(float currentClockValue)
     {
+        Debug.Log("countdown");
         AudioSystem.Instance.StopLoopingSFX("ClockTicking");
         _timeRemaining = currentClockValue;
         _isCountingDown = false;

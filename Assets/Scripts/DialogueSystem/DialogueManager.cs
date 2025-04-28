@@ -2,12 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting.Antlr3.Runtime;
-using UnityEditor.VersionControl;
+//using Unity.VisualScripting.Antlr3.Runtime;
+//using UnityEditor.VersionControl;
 using UnityEngine;
-using UnityEngine.Events;
+//using UnityEngine.Events;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
+//using static UnityEngine.Rendering.DebugUI;
 
 public class DialogueManager : MonoBehaviour
 {

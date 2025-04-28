@@ -6,7 +6,8 @@ public class MixerMinigameController : MinigameController
 {
     [Header("Mixer Minigame References")]
     [SerializeField] private GameObject _batedeira;
-    [SerializeField] private Animator _laddleAnim;
+    [SerializeField] private GameObject _massa;
+    [SerializeField] private Animator _mixerAnim;
 
     [Header("Mixer Minigame Variables")]
     private bool _isDraggingIngredient;
@@ -42,21 +43,15 @@ public class MixerMinigameController : MinigameController
     {
         if(_isDraggingIngredient) return;
 
-        // trigger mixer animation
+        _mixerAnim.SetTrigger("Mix");
+        _massa.SetActive(true);
+
+        foreach(Transform child in _batedeira.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+
         EventManager.OnGameWinTrigger();
-    }
-
-    private Rect GetWorldRect(RectTransform rectTransform)
-    {
-        Vector3[] corners = new Vector3[4];
-        rectTransform.GetWorldCorners(corners);
-        
-        Vector3 bottomLeft = corners[0];
-        Vector3 topRight = corners[2];
-
-        return new Rect(bottomLeft.x, bottomLeft.y, 
-                        topRight.x - bottomLeft.x, 
-                        topRight.y - bottomLeft.y);
     }
 
     private void ChangeGameplayMode()
@@ -64,7 +59,6 @@ public class MixerMinigameController : MinigameController
         if(_isDraggingIngredient)
         {
             _isDraggingIngredient = false;
-            _batedeira.SetActive(false);
         }
         else
         {

@@ -11,6 +11,7 @@ public class RecipeDetailsSO : ScriptableObject
     public List<GameObject> ingredientsList;
     public List<String> steps;
     public int recipeStepIndex = 0;
+    public RecipeDetailsSO nextRecipe;
 
     public int GetCurrentRecipeStep()
     {

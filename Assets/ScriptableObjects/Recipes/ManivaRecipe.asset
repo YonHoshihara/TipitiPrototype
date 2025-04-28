@@ -23,4 +23,5 @@ MonoBehaviour:
   steps:
   - IngredientsMinigame
   - CookingMinigame
-  recipeStepIndex: 2
+  recipeStepIndex: 1
+  nextRecipe: {fileID: 11400000, guid: adfad3bea678f894d8ad58b0296b95af, type: 2}

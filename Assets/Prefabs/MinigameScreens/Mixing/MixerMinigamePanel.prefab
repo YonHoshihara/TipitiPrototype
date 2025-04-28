@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56, y: -372}
+  m_AnchoredPosition: {x: -123, y: -372}
   m_SizeDelta: {x: 275.04642, y: 259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4410352967432073977
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 6884500822051957631}
   - component: {fileID: 7011063713808877565}
   m_Layer: 5
-  m_Name: Colher
+  m_Name: Mixer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,8 +187,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 780, y: 69}
-  m_SizeDelta: {x: 170.1172, y: 308.1473}
+  m_AnchoredPosition: {x: 534.49, y: 231.35}
+  m_SizeDelta: {x: 458.57, y: 568.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5127402263183386683
 CanvasRenderer:
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1713917982, guid: a33770acb41cb414fadc702def099984, type: 3}
+  m_Sprite: {fileID: 96706480, guid: c04fab917db113d4b9372101909c4a7d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -238,7 +238,7 @@ Animator:
   m_GameObject: {fileID: 1418630969999826800}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d4d5f7c9a3b724b4d8b871f78df0b365, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8f0ae3a6efc9a0c47b1d9d214ddec673, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -293,10 +293,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 40.481934, y: 147.74677}
-      - {x: 81.277824, y: 129.3451}
-      - {x: -44.864883, y: -145.0257}
-      - {x: -84.17113, y: -128.5799}
+    - - {x: -149.13391, y: -84.28302}
+      - {x: -21.0149, y: -82.72516}
+      - {x: -21.162857, y: -279.7527}
+      - {x: -145.29723, y: -280.77148}
   m_UseDelaunayMesh: 0
 --- !u!114 &7011063713808877565
 MonoBehaviour:
@@ -422,7 +422,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 598, y: -126}
+  m_AnchoredPosition: {x: 507, y: -126}
   m_SizeDelta: {x: 645.1089, y: 813.99994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1773998408061177206
@@ -645,7 +645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1753184960968231794
 RectTransform:
   m_ObjectHideFlags: 0
@@ -693,7 +693,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fd5dab2ed34fe5b42baf0af0da33c114, type: 3}
+  m_Sprite: {fileID: 1210389402, guid: c04fab917db113d4b9372101909c4a7d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -812,7 +812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48, y: -61}
+  m_AnchoredPosition: {x: -14, y: -61}
   m_SizeDelta: {x: 275.04642, y: 259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9021703280332060804
@@ -1255,6 +1255,7 @@ GameObject:
   - component: {fileID: 6700764644740876049}
   - component: {fileID: 811711517212081413}
   - component: {fileID: 3487267055820371387}
+  - component: {fileID: 7038685827975214889}
   m_Layer: 5
   m_Name: FundoBatedeira
   m_TagString: DropZone
@@ -1302,7 +1303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8113208, g: 0.7809945, b: 0.6475258, a: 0}
+  m_Color: {r: 0.19607845, g: 0.18823531, b: 0.23529413, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1334,6 +1335,7 @@ MonoBehaviour:
   _selectedRecipeSO: {fileID: 11400000, guid: 725e2f543f6f516488727504ab2c45c9, type: 2}
   _allIngredientListSO: {fileID: 11400000, guid: 35ad1d97cf775de459c7e3de631e53b9, type: 2}
   _stepIconImg: {fileID: 3139465350597172793}
+  _fundoBatedeira: {fileID: 0}
   _mixerSprite: {fileID: 22826301, guid: a33770acb41cb414fadc702def099984, type: 3}
 --- !u!68 &3487267055820371387
 EdgeCollider2D:
@@ -1385,6 +1387,19 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &7038685827975214889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7793517954257723463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1 &8311445020779580650
 GameObject:
   m_ObjectHideFlags: 0
