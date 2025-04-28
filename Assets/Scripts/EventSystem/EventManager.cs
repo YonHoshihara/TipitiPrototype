@@ -17,6 +17,9 @@ public static class EventManager
     public delegate void OnLaddleWasClicked();
     public static event OnLaddleWasClicked OnLaddleWasClickedEvent;
 
+    public delegate void OnPeelMacaxeiraPoint();
+    public static event OnPeelMacaxeiraPoint OnPeelMacaxeiraPointEvent;
+
     public delegate void OnPotWasStirred();
     public static event OnPotWasStirred OnPotWasStirredEvent;
 
@@ -56,6 +59,11 @@ public static class EventManager
     public static void OnLaddleWasClickedTrigger()
     {
         OnLaddleWasClickedEvent?.Invoke();
+    }
+
+    public static void OnPeelMacaxeiraPointTrigger()
+    {
+        OnPeelMacaxeiraPointEvent?.Invoke();
     }
 
     public static void OnPotWasStirredTrigger()

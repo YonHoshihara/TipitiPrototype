@@ -75,7 +75,12 @@ public class IngredientMinigameController : MinigameController
             ingredient.transform.localRotation = Quaternion.identity; 
             ingredient.transform.localPosition = Vector3.zero;
 
-            ingredient.GetComponent<DragAndDropIngredient>().SetIconNativeSize();
+
+            DragAndDropIngredient ingredientScript = ingredient.GetComponent<DragAndDropIngredient>();
+            ingredientScript.SetIconNativeSize();
+
+            if (ingredientScript.GetIngredientName() == "Macaxeira")
+                ingredientScript.SetDifferentForm();
         }
     }
 
@@ -103,7 +108,10 @@ public class IngredientMinigameController : MinigameController
             GameObject ingredient = Instantiate(ingredientScript.GetUIVersion());
             ingredient.transform.SetParent(_listContentGameobject.transform);
 
-            ingredient.GetComponent<IngredientListing>().SetIconAndName(ingredientScript.GetIngredientImage(), ingredientScript.GetIngredientName());
+            if (ingredientScript.GetIngredientName() == "Macaxeira")
+                ingredient.GetComponent<IngredientListing>().SetIconAndName(ingredientScript.GetIngredientAlternateImage(), ingredientScript.GetIngredientName());
+            else
+                ingredient.GetComponent<IngredientListing>().SetIconAndName(ingredientScript.GetIngredientImage(), ingredientScript.GetIngredientName());
         }
     }
 

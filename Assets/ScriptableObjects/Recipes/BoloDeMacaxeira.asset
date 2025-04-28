@@ -13,7 +13,18 @@ MonoBehaviour:
   m_Name: BoloDeMacaxeira
   m_EditorClassIdentifier: 
   recipeName: Bolo de Macaxeira
+  finishedRecipeSprite: {fileID: -111113006, guid: c04fab917db113d4b9372101909c4a7d, type: 3}
   ingredientsList:
-  - {fileID: 8718580544406211020, guid: fd9a5b50c2fac124688e9b8d1931bd21, type: 3}
+  - {fileID: 8592159526935219844, guid: 891aa9430890fb348a35ffeccd32589d, type: 3}
+  - {fileID: 8592159526935219844, guid: 1e4762defe1ff284c8d3c6c119d9bb18, type: 3}
+  - {fileID: 8592159526935219844, guid: 2a36ff3aa4c15fa40932205063e5d8ce, type: 3}
+  - {fileID: 8592159526935219844, guid: 955408e678e26704e970e063744875c4, type: 3}
+  - {fileID: 8592159526935219844, guid: 18e40d5e4d9159b4cbba8d0da618a0f4, type: 3}
+  - {fileID: 8592159526935219844, guid: 5ec674d959508924482eab7027bde268, type: 3}
   steps:
+  - IngredientsMinigame
+  - PeelMacaxeiraMinigame
   - MixerMinigame
+  - OvenMinigame
+  recipeStepIndex: 3
+  nextRecipe: {fileID: 0}

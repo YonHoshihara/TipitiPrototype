@@ -16,7 +16,10 @@ public class DragAndDropIngredient : MonoBehaviour, IPointerDownHandler, IBeginD
     [SerializeField] private GameObject _uiVersion;
     private Vector3 _originPos;
     private bool _isLocked;
-    
+
+    [SerializeField] private bool _hasDifferentForm;
+    [SerializeField] private Sprite _differentForm;
+
 
     private void Start()
     {
@@ -40,6 +43,11 @@ public class DragAndDropIngredient : MonoBehaviour, IPointerDownHandler, IBeginD
         return _ingredientIcon.sprite;
     }
 
+    public Sprite GetIngredientAlternateImage()
+    {
+        return _differentForm;
+    }
+
     public string GetIngredientName()
     {
         return _ingredientName;
@@ -56,8 +64,27 @@ public class DragAndDropIngredient : MonoBehaviour, IPointerDownHandler, IBeginD
         _col.enabled = true;
         AudioSystem.Instance.PlaySFX("DropIngredientInWater");
         SetLockedPosition();
+        SetDifferentForm();
     }
 
+    public void IsInsideMixer()
+    {
+        _rb.bodyType = RigidbodyType2D.Dynamic;
+        _col.enabled = true;
+        SetLockedPosition();
+
+        if(_ingredientName != "Macaxeira")
+            SetDifferentForm();
+    }
+
+    public void SetDifferentForm()
+    {
+        if (_hasDifferentForm)
+        {
+            _ingredientIcon.sprite = _differentForm;
+            _ingredientIcon.SetNativeSize();
+        }
+    }
 
     #region Pointer functions
     public void OnBeginDrag(PointerEventData eventData)

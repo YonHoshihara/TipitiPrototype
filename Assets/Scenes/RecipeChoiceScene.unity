@@ -340,6 +340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChooseRecipePanel_PFB
       objectReference: {fileID: 0}
+    - target: {fileID: 4284678079924645774, guid: 36c409b770e80a04fb93c795032eea6c, type: 3}
+      propertyPath: _specialFirstScene
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7799030761859943649, guid: 36c409b770e80a04fb93c795032eea6c, type: 3}
       propertyPath: m_Pivot.x
       value: 0

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c3f95cff716fe46907216dd28f1dfb, type: 3}
   m_Name: SelectedRecipe
   m_EditorClassIdentifier: 
-  recipe: {fileID: 11400000, guid: adfad3bea678f894d8ad58b0296b95af, type: 2}
+  recipe: {fileID: 0}

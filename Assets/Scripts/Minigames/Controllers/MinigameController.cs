@@ -67,6 +67,7 @@ public class MinigameController : MonoBehaviour
 
     protected virtual IEnumerator TimeCountdownDelay(float currentClockValue)
     {
+        Debug.Log("countdown");
         AudioSystem.Instance.StopLoopingSFX("ClockTicking");
         _timeRemaining = currentClockValue;
         _isCountingDown = false;

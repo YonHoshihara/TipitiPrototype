@@ -147,7 +147,8 @@ MonoBehaviour:
   _minigameTimerValue: 13
   _timerDelay: 1.5
   _batedeira: {fileID: 2934617774680946282}
-  _laddleAnim: {fileID: 6443014807958730709}
+  _massa: {fileID: 7126293080414781159}
+  _mixerAnim: {fileID: 6443014807958730709}
 --- !u!1001 &22008278883954070
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -381,6 +382,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1260940434279724957}
     m_Modifications:
+    - target: {fileID: 811711517212081413, guid: 87c330c0fdf7742488d8aa0d58f0d7ed, type: 3}
+      propertyPath: _fundoBatedeira
+      value: 
+      objectReference: {fileID: 1759814444986683708}
     - target: {fileID: 1354565225079188488, guid: 87c330c0fdf7742488d8aa0d58f0d7ed, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -461,6 +466,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4923486865326271017, guid: 87c330c0fdf7742488d8aa0d58f0d7ed, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5607100382872454619, guid: 87c330c0fdf7742488d8aa0d58f0d7ed, type: 3}
       propertyPath: m_Name
       value: MixerMinigamePanel
@@ -475,6 +484,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4864545727777800995, guid: 87c330c0fdf7742488d8aa0d58f0d7ed, type: 3}
   m_PrefabInstance: {fileID: 4941003051475310125}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1759814444986683708 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6700764644740876049, guid: 87c330c0fdf7742488d8aa0d58f0d7ed, type: 3}
+  m_PrefabInstance: {fileID: 4941003051475310125}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934617774680946282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2554646941384267474 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7485569459767329023, guid: 87c330c0fdf7742488d8aa0d58f0d7ed, type: 3}
@@ -519,6 +539,11 @@ RectTransform:
 --- !u!95 &6443014807958730709 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2160557717624234488, guid: 87c330c0fdf7742488d8aa0d58f0d7ed, type: 3}
+  m_PrefabInstance: {fileID: 4941003051475310125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7126293080414781159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2770934039798671562, guid: 87c330c0fdf7742488d8aa0d58f0d7ed, type: 3}
   m_PrefabInstance: {fileID: 4941003051475310125}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8310653167967876738 stripped
