@@ -6,33 +6,34 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Olds/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/MenuScene.unity
+    path: Assets/Olds/Scenes/MenuScene.unity
     guid: ed02938f40930f5418a72bca43f6c3dc
   - enabled: 1
-    path: Assets/Scenes/RecipeChoiceScene.unity
+    path: Assets/Olds/Scenes/RecipeChoiceScene.unity
     guid: 382b05c8c1d2c7b46bcb3f3615e864ac
   - enabled: 1
-    path: Assets/Scenes/SettingsScreen.unity
+    path: Assets/Olds/Scenes/SettingsScreen.unity
     guid: 7d8726856cf2dab42a0205b16626663a
   - enabled: 1
-    path: Assets/Scenes/Cutscene1.unity
+    path: Assets/Olds/Scenes/Cutscene1.unity
     guid: 5f6f2ab753140b54eb728c1aff3b2fbc
   - enabled: 1
-    path: Assets/Scenes/Minigames/IngredientsMinigame.unity
+    path: Assets/Olds/Scenes/Minigames/IngredientsMinigame.unity
     guid: c67683c2cd86d1548a3855c2a23e3232
   - enabled: 1
-    path: Assets/Scenes/Minigames/CookingMinigame.unity
+    path: Assets/Olds/Scenes/Minigames/CookingMinigame.unity
     guid: 63d79558dce243540af27b169457b9c8
   - enabled: 1
-    path: Assets/Scenes/Minigames/MixerMinigame.unity
+    path: Assets/Olds/Scenes/Minigames/MixerMinigame.unity
     guid: 8edf21094d50a6d468659a09174c8aad
   - enabled: 1
-    path: Assets/Scenes/Minigames/OvenMinigame.unity
+    path: Assets/Olds/Scenes/Minigames/OvenMinigame.unity
     guid: 12b271500bf8d8d41a29b1038f7864ea
   - enabled: 1
-    path: Assets/Scenes/Minigames/PeelMacaxeiraMinigame.unity
+    path: Assets/Olds/Scenes/Minigames/PeelMacaxeiraMinigame.unity
     guid: 81e107d98d10a0e489c34faeae84825d
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
