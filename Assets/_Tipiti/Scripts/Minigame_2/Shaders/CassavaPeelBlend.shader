@@ -9,7 +9,9 @@ Shader "Custom/CassavaPeelBlend"
     }
     SubShader
     {
-        Tags{ "RenderType"="Opaque" }
+        Tags { "Queue"="Transparent" "RenderType"="Transparent" "IgnoreProjector"="True" "CanUseSpriteAtlas"="True"}
+        Cull Off Lighting Off ZWrite Off
+        Blend One OneMinusSrcAlpha
         LOD 200
 
         Pass

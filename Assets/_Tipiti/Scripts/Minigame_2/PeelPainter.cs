@@ -3,27 +3,26 @@ using UnityEngine;
 public class PeelPainter : MonoBehaviour
 {
     [Header("Scene")]
-    public Camera cam;
-    public PeelableCassava cassava;
-    public LayerMask cassavaMask;
+    [SerializeField] private Camera cam;
+    [SerializeField] private PeelableCassava cassava;
+    [SerializeField] private LayerMask cassavaMask;
 
     [Header("Brush")]
-    public Material brushMat;  // uses "Hidden/PeelBrushStamp"
-    [Range(0.005f, 0.2f)] public float brushRadiusUV = 0.04f;
-    [Range(0f, 1f)] public float brushHardness = 0.7f;
-    [Range(0f, 1f)] public float brushStrength = 1.0f;
-    public bool eraseMode = false; // hold a key to toggle erase if wanted
+    [SerializeField] private Material brushMat;  // uses "Hidden/PeelBrushStamp"
+    [Range(0.005f, 0.2f)] [SerializeField] private float brushRadiusUV = 0.04f;
+    [Range(0f, 1f)] [SerializeField] private float brushHardness = 0.7f;
+    [Range(0f, 1f)] [SerializeField] private float brushStrength = 1.0f;
+    [SerializeField] private bool eraseMode = false; // hold a key to toggle erase if wanted
 
     [Header("Penalty / Feel")]
-    public float maxAngleDegrees = 55f; // too steep angle = bad
-    public float minDragSpeed = 0.02f;  // prevents dotting too slow
-    public float penaltyStrength = 0.5f; // reduce paint when wrong
+    [SerializeField] private float maxAngleDegrees = 55f; // too steep angle = bad
+    [SerializeField] private float minDragSpeed = 0.02f;  // prevents dotting too slow
+    [SerializeField] private float penaltyStrength = 0.5f; // reduce paint when wrong
 
-    private Vector2 _lastUV;
     private Vector2 _lastScreen;
     private bool _hadLast;
 
-    void Update()
+    private void Update()
     {
         if (cam == null) cam = Camera.main;
 
@@ -42,14 +41,13 @@ public class PeelPainter : MonoBehaviour
         }
     }
 
-    void TryPaint(Vector2 screenPos)
+    private void TryPaint(Vector2 screenPos)
     {
         Ray ray = cam.ScreenPointToRay(screenPos);
 
         if (Physics.Raycast(ray, out RaycastHit hit, 2_000f, cassavaMask))
         {
-            Debug.Log($"Hit: {hit.collider.name}, uv={hit.textureCoord}");
-
+            // Debug.Log($"Hit: {hit.collider.name}, uv={hit.textureCoord}");
             if (!hit.collider || hit.collider.GetComponent<PeelableCassava>() != cassava)
                 return;
 
@@ -70,12 +68,11 @@ public class PeelPainter : MonoBehaviour
 
             Stamp(uv, strength, eraseMode ? 1f : 0f);
 
-            _lastUV = uv;
             _hadLast = true;
         }
     }
 
-    void Stamp(Vector2 uv, float strength, float erase)
+    private void Stamp(Vector2 uv, float strength, float erase)
     {
         if (!cassava || !cassava.peelMaskRT || !brushMat) return;
 
@@ -92,23 +89,4 @@ public class PeelPainter : MonoBehaviour
         Graphics.Blit(tmp, src, brushMat);       // draw brush using tmp as _MainTex into src
         RenderTexture.ReleaseTemporary(tmp);
     }
-
-    // void Stamp(Vector2 uv, float strength, float erase)
-    // {
-    //     if (!cassava || !cassava.peelMaskRT || !brushMat) return;
-
-    //     brushMat.SetVector("_BrushPos", new Vector4(uv.x, uv.y, 0, 0));
-    //     brushMat.SetFloat("_BrushRadius", brushRadiusUV);
-    //     brushMat.SetFloat("_BrushHardness", brushHardness);
-    //     brushMat.SetFloat("_BrushStrength", Mathf.Clamp01(strength));
-    //     brushMat.SetFloat("_Erase", erase);
-
-    //     var rt = cassava.peelMaskRT;
-    //     var active = RenderTexture.active;
-
-    //     // Blit: _MainTex is the current mask (read), output back into same RT
-    //     Graphics.Blit(rt, rt, brushMat);
-
-    //     RenderTexture.active = active;
-    // }
 }

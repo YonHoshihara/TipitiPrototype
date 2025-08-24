@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseTex:
-        m_Texture: {fileID: 2800000, guid: e940c922557abed4f9ac8cfd36bd0f51, type: 3}
+        m_Texture: {fileID: 2800000, guid: ca4fd0b1aa310264c8bc7ad60c3538d2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -48,7 +48,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PeeledTex:
-        m_Texture: {fileID: 2800000, guid: c0e7930d0606e164ca49030bd28d947a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6798fe4107c706c40922cd1f1bc217c6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []

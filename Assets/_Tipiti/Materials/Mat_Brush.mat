@@ -43,12 +43,12 @@ Material:
     m_Floats:
     - _BrushHardness: 0.7
     - _BrushRadius: 0.04
-    - _BrushStrength: 0.25
+    - _BrushStrength: 1
     - _EnableExternalAlpha: 0
     - _Erase: 0
     - _ZWrite: 0
     m_Colors:
-    - _BrushPos: {r: 0.9713057, g: 0.9686874, b: 0, a: 0}
+    - _BrushPos: {r: 0.6487746, g: 0.37787452, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
