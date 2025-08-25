@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using TMPro;
 
@@ -11,7 +12,7 @@ public class PeelingMinigame : MonoBehaviour
     [SerializeField] private TextMeshProUGUI promptText;
 
     [Header("Game Rules")]
-    [Range(0, 100)] [SerializeField] private float targetPercent = 85f;
+    [Range(0, 100)][SerializeField] private float targetPercent = 85f;
     [SerializeField] private float maxTime = 0f;
     [SerializeField] private bool failIfOvertime = false;
 
@@ -29,6 +30,7 @@ public class PeelingMinigame : MonoBehaviour
     private Texture2D _readMask;
     private Texture2D _readVis; // downsampled visibility
     private bool _ended;
+    private int _lastProgressStep = 0;
 
     private void Start()
     {
@@ -58,7 +60,17 @@ public class PeelingMinigame : MonoBehaviour
         {
             _sampleClock = sampleInterval;
             float p = EstimatePercentWeighted();
+
+            int step = Mathf.FloorToInt(p / 1f); // de 0 a 10
             if (progressText) progressText.text = $"{p:0}%";
+
+            if (step > _lastProgressStep)
+            {
+                _lastProgressStep = step;
+                // feedback
+                if (progressText) StartCoroutine(PulseText(progressText));
+                // pode tocar um "ting"
+            }
 
             if (p >= targetPercent)
                 End(true, "Descascado o suficiente!");
@@ -138,6 +150,20 @@ public class PeelingMinigame : MonoBehaviour
         _ended = true;
         if (promptText) promptText.text = success ? $"Sucesso! {msg}" : $"Falhou: {msg}";
         if (painter) painter.enabled = false;
+    }
+
+    private IEnumerator PulseText(TextMeshProUGUI txt)
+    {
+        Vector3 baseScale = txt.rectTransform.localScale;
+        Vector3 target = baseScale * 1.2f;
+        float t = 0f;
+        while (t < 0.2f)
+        {
+            t += Time.deltaTime;
+            txt.rectTransform.localScale = Vector3.Lerp(baseScale, target, t / 0.2f);
+            yield return null;
+        }
+        txt.rectTransform.localScale = baseScale;
     }
 
     // Helper to build visibility from a Sprite at runtime (chame após setar o sprite)
